@@ -16,11 +16,10 @@ public class Main {
         userService.saveUser("Mihail", "Mihailov", (byte) 20);
 
         List<User> userList = userService.getAllUsers();
-        for (User el : userList) {
-            System.out.println(el);
-        }
+        userService.showAllUsers(userList);
 
         userService.cleanUsersTable();
         userService.dropUsersTable();
+        userService.close();
     }
 }
